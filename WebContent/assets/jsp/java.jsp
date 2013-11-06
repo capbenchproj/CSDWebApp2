@@ -8,7 +8,7 @@
   <meta name="keywords" content="">
   <meta http-equiv="Content-Type"
  content="text/html; charset=iso-8859-1">
-  <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+  <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="main-out">
@@ -31,7 +31,7 @@
 
 
 
-<div class="img"><img src="/assets/images/img1.jpg" alt="" height="101"
+<div class="img"><img src="../images/img1.jpg" alt="" height="101"
  width="157"></div> 
 <div class="welcome">
 <h1 class="title">JAVA Quiz</h1>
@@ -50,7 +50,7 @@
 <input type = "radio" id = "c" value = "3" name = "quiz">c) An exception is thrown at runtime.<br></br>
 
 
-<img src="/assets/images/question1.jpg" border="0" height="300" width="600"></a>
+<img src="../images/question1.jpg" border="0" height="300" width="600"></a>
 <br />
 <br />
 <input type = "button" value = "Next" onclick = "firstAnswer()"> 
@@ -60,9 +60,9 @@
 <!--
 <ul class="enlarge"> 
 <li>
-<img src="/assets/images/question1.jpg" width="150px" height="100px" alt="question1" /> 
+<img src="../images/question1.jpg" width="150px" height="100px" alt="question1" /> 
 <span> 
-<img src="/assets/images/question1.jpg" alt="question1" />
+<img src="../images/question1.jpg" alt="question1" />
 </span>
 </li>
 </ul>
@@ -556,7 +556,7 @@ alert("your score is "+k+" out of 50");
 </ul>
 <p>&copy; Copyright 2013. Designed by Kash Raju & James Caddick</p>
 
-<img src="/assets/images/footer.gif" alt="html templates" border="0" height="1" width="1"></a>
+<img src="../images/footer.gif" alt="html templates" border="0" height="1" width="1"></a>
 
 </div>
 </div>

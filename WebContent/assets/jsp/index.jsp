@@ -8,7 +8,7 @@
   <meta name="keywords" content="">
   <meta http-equiv="Content-Type"
  content="text/html; charset=iso-8859-1">
-  <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+  <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="main-out">
@@ -28,7 +28,7 @@
 <div class="content">
 <div class="content-left">
 <div class="row1">
-<div class="img"><img src="/assets/images/img1.jpg" alt="" height="101"
+<div class="img"><img src="../images/img1.jpg" alt="" height="101"
  width="157"></div>
 <div class="welcome">
 <h1 class="title">Welcome to the Capgemini CSD Quiz</h1>
@@ -73,7 +73,7 @@ From here you can select the quiz type you wish you attempt. Quiz types consist 
 </ul>
 <p>&copy; Copyright 2013. Designed by Kash Raju & James Caddick</p>
 
-<img src="/assets/images/footer.gif" alt="html templates" border="0" height="1" width="1"></a>
+<img src="../images/footer.gif" alt="html templates" border="0" height="1" width="1"></a>
 
 </div>
 </div>

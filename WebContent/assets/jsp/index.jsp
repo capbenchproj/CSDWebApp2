@@ -37,13 +37,7 @@ From here you can select the quiz type you wish you attempt. Quiz types consist 
 </div>
 </div>
 <div class="row2">
-<div class="section1">
-<h2 class="subtitle">Log In</h2>
-<p><strong>User will log in here</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><a href="#" class="more">Sign In</a></p>
-</div>
+
 <div class="section1">
 
 </div>

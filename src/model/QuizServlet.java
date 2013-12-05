@@ -30,10 +30,7 @@ public class QuizServlet extends HttpServlet {
         
         while(res.next())
  			{   
-     	   	out.println("<tr bgcolor=ffffdd>");
- 		 	out.println("<td><font face=Sysfaen size=4>"+res.getInt(1)+"</font></td>");
- 		    out.println("<td><font face=Sysfaen size=4>"+res.getString(2)+"</font></td>");
-    		out.println("</tr>");
+ 		 	out.println("<td><font face=Sysfaen size=4>"+res.getString(2)+ "</font></td><br/>");
  	    }
    
         

@@ -6,14 +6,14 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/MySQL JDBC Driver"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/Users/savaugha/Documents/Eclipse/mysql-connector-java-5.1.22/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="lib" path="/jar/eclipselink.jar"/>
-	<classpathentry kind="lib" path="D:/Users/savaugha/Documents/Eclipse/eclipselink/jlib/jpa/javax.persistence.source_2.1.0.v201304241213.jar"/>
-	<classpathentry kind="lib" path="D:/Users/savaugha/Documents/Eclipse/eclipselink/jlib/jpa/javax.persistence_2.1.0.v201304241213.jar"/>
-	<classpathentry kind="lib" path="D:/Users/savaugha/Documents/Eclipse/eclipselink/jlib/jpa/org.eclipse.persistence.jpa.modelgen.source_2.5.1.v20130918-f2b9fc5.jar"/>
-	<classpathentry kind="lib" path="D:/Users/savaugha/Documents/Eclipse/eclipselink/jlib/jpa/org.eclipse.persistence.jpa.modelgen_2.5.1.v20130918-f2b9fc5.jar"/>
-	<classpathentry kind="lib" path="D:/Users/savaugha/Documents/Eclipse/eclipselink/jlib/jpa/org.eclipse.persistence.jpars.source_2.5.1.v20130918-f2b9fc5.jar"/>
-	<classpathentry kind="lib" path="D:/Users/savaugha/Documents/Eclipse/eclipselink/jlib/jpa/org.eclipse.persistence.jpars_2.5.1.v20130918-f2b9fc5.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/eclipselink.jar"/>
+	<classpathentry kind="lib" path="lib/javax.persistence.source_2.1.0.v201304241213.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.persistence.jpa.modelgen_2.5.1.v20130918-f2b9fc5.jar"/>
+	<classpathentry kind="lib" path="lib/javax.persistence_2.1.0.v201304241213.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.persistence.jpa.modelgen.source_2.5.1.v20130918-f2b9fc5.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.persistence.jpars_2.5.1.v20130918-f2b9fc5.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.persistence.jpars.source_2.5.1.v20130918-f2b9fc5.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

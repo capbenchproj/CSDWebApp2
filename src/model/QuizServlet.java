@@ -1,91 +1,72 @@
 package model;
 
 import java.io.*;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-import com.mysql.jdbc.Connection;
+
 
 @WebServlet(name="model.QuizServlet",urlPatterns={"/servlet/model.QuizServlet"})
 @SuppressWarnings("serial")
 public class QuizServlet extends HttpServlet {
+  
+  String DBPassword;         // Temp variable for the password
+  Connection con;
 
-  String question, answerA, answerB, answerC, answerD, correct;
-
-  public void init() throws ServletException {
-    question = getInitParameter("question");
-    answerA  = getInitParameter("answerA");
-    answerB  = getInitParameter("answerB");
-    answerC  = getInitParameter("answerC");
-    answerD  = getInitParameter("answerD");
-    correct  = getInitParameter("correct");
-    if (question == null || answerA == null || answerB == null ||
-        answerC == null || answerD == null || correct == null) {
-      throw new ServletException("Missing required init parameter(s)!");
-    }
-  }
 
   public void doGet(HttpServletRequest req, HttpServletResponse rsp)
-                throws ServletException, IOException {
+                throws ServletException, IOException 
+  {
     rsp.setContentType("text/html");
     PrintWriter out = rsp.getWriter();
-
-    String answer = req.getParameter("answer");
     
-    try {
-		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+    try{
+        con = DBConnector.connectToDatabase();               // Opens a connection
+        Statement statement = con.createStatement();    		// Creates a query statement object
+        
+        ResultSet res = statement.executeQuery("SELECT * FROM answers");  // Finds the username
+        
+        while(res.next())
+ 			{   
+     	   	out.println("<tr bgcolor=ffffdd>");
+ 		 	out.println("<td><font face=Sysfaen size=4>"+res.getInt(1)+"</font></td>");
+ 		    out.println("<td><font face=Sysfaen size=4>"+res.getString(2)+"</font></td>");
+    		out.println("</tr>");
+ 	    }
+   
+        
+        res.close();    // Closes ResultSet
+        statement.close();   // Closes Statement
+        DBConnector.closeDatabaseConnection(con); // Closes the connection
+        
+   }
+   catch (SQLException ex)
+   {
+        while(ex != null){
+              System.out.println("SQLState: " + ex.getSQLState());
+             System.out.println("Error Code: " + ex.getErrorCode());
+             System.out.println("Message: " + ex.getMessage());
+             
+             Throwable t = ex.getCause();
+             
+             while (t !=null)
+             {
+                   System.out.println("Cause: " + t);
+                   t = t.getCause();
+             }
+             
+        }
+   }
 
-    String sourceURL = new String("jdbc:odbc:MyQuiz");//DSN name
-    Connection databaseConnection = (Connection) DriverManager.getConnection(sourceURL);
-    if (databaseConnection != null)
-        out.println("<P>Connection made<BR>");
-
-    Statement myStatement = databaseConnection.createStatement();
-    ResultSet results = myStatement.executeQuery ("SELECT * FROM Answers;");
-    String test = null;
-    results.getString(test);
     
 
-
-    out.println("<html>");
-    out.println("<head><title> Online Quiz </title></head>");
-    out.println("<body>");
-
     
-    if (answer == null) {
-      StringBuffer action = req.getRequestURL();
-
-      out.println("<form action=\"" + action + "\" method=\"POST\">\n");
-      out.println("<p><b>Question:</b> " + question + "</p>");
-      out.println("<p><input type=\"radio\" name=\"answer\" " +
-                  "value=\"A\" /> " + answerA + "<br />" + test);
-      out.println("   <input type=\"radio\" name=\"answer\" " +
-                  "value=\"B\" /> " + answerB + "<br />");
-      out.println("   <input type=\"radio\" name=\"answer\" " +
-                  "value=\"C\" /> " + answerC + "<br />");
-      out.println("   <input type=\"radio\" name=\"answer\" " +
-                  "value=\"D\" /> " + answerD + "<br />");
-      out.println("   <input type=\"submit\" value=\"Submit\" /></p>");
-      out.println("</form>");
-    } else {
-      if (answer.equals(correct))
-        out.println("<p><b>YES!</b> That's the right answer!</p>");
-      else
-        out.println("<p><b>Sorry.</b> That's the wrong answer.</p>");
-    }
-
-    out.println("</body></html>");
-    
-	} catch (ClassNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
   }
 
   public void doPost(HttpServletRequest req, HttpServletResponse rsp)

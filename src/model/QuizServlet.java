@@ -7,18 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 
-
-@WebServlet(name="model.QuizServlet",urlPatterns={"/servlet/model.QuizServlet"})
 @SuppressWarnings("serial")
 public class QuizServlet extends HttpServlet {
   
-  String DBPassword;         // Temp variable for the password
   Connection con;
-
 
   public void doGet(HttpServletRequest req, HttpServletResponse rsp)
                 throws ServletException, IOException 
@@ -27,10 +22,11 @@ public class QuizServlet extends HttpServlet {
     PrintWriter out = rsp.getWriter();
     
     try{
+    	Class.forName("com.mysql.jdbc.Driver");
         con = DBConnector.connectToDatabase();               // Opens a connection
         Statement statement = con.createStatement();    		// Creates a query statement object
         
-        ResultSet res = statement.executeQuery("SELECT * FROM answers");  // Finds the username
+        ResultSet res = statement.executeQuery("SELECT * FROM answers"); 
         
         while(res.next())
  			{   
@@ -62,9 +58,10 @@ public class QuizServlet extends HttpServlet {
              }
              
         }
-   }
-
-    
+   } catch (ClassNotFoundException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
 
     
   }

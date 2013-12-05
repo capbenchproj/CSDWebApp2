@@ -10,36 +10,13 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <servlet>    
-    <servlet-name>    
-      model.QuizServlet  
-    </servlet-name>    
-    <servlet-class>    
-      model.QuizServlet    
-    </servlet-class>    
-    <init-param>    
-      <param-name>question</param-name>    
-      <param-value>What is WORA?</param-value>    
-    </init-param>    
-    <init-param>    
-      <param-name>answerA</param-name>    
-      <param-value>Wear Only Reinforced Acryllic</param-value>    
-    </init-param>    
-    <init-param>    
-      <param-name>answerB</param-name>    
-      <param-value>Where Old Rhinos Assemble</param-value>    
-    </init-param>    
-    <init-param>    
-      <param-name>answerC</param-name>    
-      <param-value>Write Once Run Anywhere</param-value>    
-    </init-param>    
-    <init-param>    
-      <param-name>answerD</param-name>    
-      <param-value>Walk Or Run Anywhere</param-value>    
-    </init-param>    
-    <init-param>    
-      <param-name>correct</param-name>    
-      <param-value>C</param-value>    
-    </init-param>    
-  </servlet>
+    <servlet>
+         <servlet-name>QuizServlet</servlet-name>
+         <servlet-class>model.QuizServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+         <servlet-name>QuizServlet</servlet-name>
+         <url-pattern>/servlet/QuizServlet</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

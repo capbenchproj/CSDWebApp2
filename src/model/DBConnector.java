@@ -1,4 +1,4 @@
-package DBConnection;
+package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ public class DBConnector
 	private static String password = "NTohqIhpyJ2GFW3Lym";
 
 	// Creates a connection and returns the connection.
-	public static Connection connectToDatabase() 
+	protected static Connection connectToDatabase() 
 	{
 		// Creates a connection variable
 		Connection con = null;
@@ -44,7 +44,7 @@ public class DBConnector
 	}
 
 	// Closes the DB Connection
-	public static void closeDatabaseConnection(Connection con) 
+	protected static void closeDatabaseConnection(Connection con) 
 	{
 		try 
 		{
